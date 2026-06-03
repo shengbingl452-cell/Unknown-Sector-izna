@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>校史论坛 - B2·灯</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <main class="forum-container">
+      <header class="forum-header">
+        <div class="topline">
+          <span>校史论坛 Archive BBS</span>
+          <span>游客身份：未登录</span>
+        </div>
+        <h1 class="forum-title">校史论坛</h1>
+        <p class="forum-subtitle">非官方学生社区 · 建站时间 2009-03-17 · 当前板块：B2·灯</p>
+        <div class="system-banner">
+          <span class="badge">诡</span>
+          <span>板块简介：<em>我在等你们找到我。</em></span>
+        </div>
+      </header>
+
+      <nav class="forum-nav" aria-label="论坛导航">
+        <button class="nav-button active" data-board="b2">B2·灯</button>
+        <button class="nav-button" data-board="archive">旧楼档案</button>
+        <button class="nav-button" data-board="help">报修/求助</button>
+        <button class="nav-button" data-board="system">系统公告</button>
+      </nav>
+
+      <section class="status-strip">
+        <span>今日帖数：17</span>
+        <span>在线：68 人</span>
+        <span>不可见帖子：5</span>
+        <span class="blink">最后访问：2001-03-17 03:17</span>
+      </section>
+
+      <section class="layout-grid">
+        <div class="thread-list" aria-label="帖子列表">
+          <table class="forum-table">
+            <thead>
+              <tr>
+                <th class="col-title">主题</th>
+                <th>作者</th>
+                <th>回复</th>
+                <th>最后更新</th>
+              </tr>
+            </thead>
+            <tbody id="threadRows"></tbody>
+          </table>
+          <div class="forum-pagination">
+            <a href="#" aria-label="第一页">1</a>
+            <a href="#" aria-label="第二页">2</a>
+            <a href="#" aria-label="第三页">3</a>
+            <a href="#" aria-label="下一页">下一页</a>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="panel-title">板块资料</div>
+          <dl class="board-meta">
+            <dt>创建者</dt>
+            <dd>未知</dd>
+            <dt>创建时间</dt>
+            <dd class="corrupt">----</dd>
+            <dt>版主</dt>
+            <dd>无法读取</dd>
+            <dt>板块 ID</dt>
+            <dd>B2-LAMP-0317</dd>
+          </dl>
+          <button class="old-button" id="toggleHidden">显示隐藏字</button>
+          <button class="old-button" id="openProfile">查看 01栋-B2-灯</button>
+          <div class="panel-title terminal-title">调查终端</div>
+          <div class="terminal-panel">
+            <div class="terminal-line" id="terminalStatus">状态：尚未建立坐标。</div>
+            <label class="terminal-label" for="answerInput">输入线索 / 密码</label>
+            <div class="terminal-input-row">
+              <input id="answerInput" class="terminal-input" autocomplete="off" placeholder="例如 QISHI" />
+              <button class="old-button" id="submitAnswer">提交</button>
+            </div>
+            <div class="terminal-help">可尝试：名字、密码、楼层、仪式词。</div>
+          </div>
+          <div class="panel-title terminal-title">已取得线索</div>
+          <ul class="inventory-list" id="inventoryList">
+            <li class="empty-clue">暂无。点击帖子里的附件或异常文字。</li>
+          </ul>
+          <div class="hint-box">
+            <span class="tiny-label">页脚缩放到 200% 可见</span>
+            <p>本论坛自2009年建立以来，共有 <button class="text-button" id="ghostUser">1</button> 名从未注册的用户。</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="post-view" id="postView" aria-live="polite">
+        <div class="post-empty">点击上方帖子标题查看内容。</div>
+      </section>
+
+      <footer class="forum-footer">
+        <span>Powered by OldSchool BBS 2.17</span>
+        <span class="footer-secret">如果这行字被看见，希望有人能记得我来过。</span>
+      </footer>
+    </main>
+
+    <dialog class="profile-modal" id="profileModal">
+      <form method="dialog">
+        <div class="modal-title">用户资料：01栋-B2-灯</div>
+        <table class="profile-table">
+          <tr>
+            <th>注册时间</th>
+            <td>1999-10-22 03:17</td>
+          </tr>
+          <tr>
+            <th>个人简介</th>
+            <td>校刊编委会。喜欢写字。想好好毕业。</td>
+          </tr>
+          <tr>
+            <th>最后登录</th>
+            <td class="blink">2026-09-25 00:00</td>
+          </tr>
+        </table>
+        <button class="old-button modal-close">关闭</button>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
