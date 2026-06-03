@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知领域：izna - 帖子：ritual_final.txt 解码与执行</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <span class="logo-cn">⌇ 未知领域：izna ⌇</span>
+            <span class="logo-en">The Unknown Zone: izna</span>
+        </div>
+        <div class="banner">
+            <span class="banner-text">直播/仪式执行区</span>
+            <span class="banner-date">since 2004</span>
+        </div>
+        <div class="warning">
+            ⚠️ 系统警告：检测到时间污染源 | B2档案异常 | 访问记录异常 ⚠️
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="forum-1.html">怪谈档案馆</a>
+        <a href="forum-2.html">失踪人口档案库</a>
+        <a href="forum-3.html">时空观测记录</a>
+        <a href="forum-4.html" class="active">直播/仪式执行区</a>
+        <a href="#">站务管理</a>
+    </div>
+
+    <div class="post-container">
+        <div class="post-header">
+            <div class="post-title">【执行】ritual_final.txt 解码与执行</div>
+            <div class="post-meta">
+                <span>作者：郑世菲</span>
+                <span>发表于：2026-09-21 00:00:00</span>
+                <span>阅读：1.2k | 回复：89</span>
+            </div>
+            <div class="post-author-info">
+                <div class="post-avatar">
+                    <div class="avatar">💻</div>
+                </div>
+                <div>
+                    <div>郑世菲</div>
+                    <div style="font-size:10px; color:#84cc16;">UID: sefi_0122 | 注册: 2026-09-01</div>
+                    <div style="font-size:10px; color:#64748b;">签名: 代码是最后的边界。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <p>我收到了一个文件：<code>ritual_final.txt</code>。表面上是Base64编码，但我解码后发现是乱序的中文短句。</p>
+            
+            <div class="photo-placeholder">
+                📄 [附件] ritual_final.txt<br>
+                <span style="font-size:10px; color:#64748b;">文件大小: 1.7KB | 最后修改: 1999-03-17 03:17</span>
+            </div>
+            
+            <p>第一次解码后的内容：</p>
+            <div style="background:#0b0e14; padding:10px; font-family:monospace; font-size:10px; margin:10px 0;">
+                "17 留会它续 的灯 亮着 一个人 某个 在 地方 一直 就这样 我们 每个人的 记忆里 在 或者 会 它 不 消失了 真的 楼 这 如果 有一天"
+            </div>
+            
+            <p>这些句子前面有编号，编号是偏旁笔画数。需要按编号升序排列。</p>
+            
+            <div class="photo-placeholder">
+                📋 编号对应关系：<br>
+                1: 一 | 2: 人 | 3: 口 | 4: 日 | 5: 木 | 6: 水 | 7: 火 | 8: 土 | 9: 金 | 10: 心
+            </div>
+            
+            <p style="margin-top:15px; padding:8px; background:#1a1f2a; border-left:3px solid #fbbf24;">
+                <strong>📌 最终解码结果：</strong><br>
+                "我有时候想，如果有一天这栋楼不在了，它是不是就真的消失了？<br>
+                或者它会留在我们每个人的记忆里，就这样，一直一直，在某个地方，继续亮着灯。"
+            </p>
+            
+            <p>这是乔时写的《楼里楼外》的最后一段。但我在执行代码时发现了一个问题——</p>
+            
+            <p style="color:#e11d48;">代码里隐藏着另一条指令。如果按原样执行，她会被释放。如果修改最后一段参数，她会被剥离。</p>
+            
+            <p>我需要你们帮我决定。执行哪一种？</p>
+        </div>
+
+        <div class="post-footer">
+            <span>👍 点赞 203</span>
+            <span>💬 回复 89</span>
+            <span>🔖 收藏</span>
+        </div>
+    </div>
+
+    <!-- 谜题交互区 -->
+    <div class="puzzle-box">
+        <h4>🔐 记忆碎片解锁 · Base64解码</h4>
+        <p>文件被Base64编码了两次。执行完整解码后，你得到了什么？</p>
+        
+        <textarea id="base64-input" class="puzzle-input" rows="3" placeholder="输入解码后的完整文本..."></textarea>
+        <button class="puzzle-btn" id="base64-btn">验证</button>
+        <div id="base64-result" class="puzzle-result" style="display:none;"></div>
+        
+        <hr style="margin:15px 0; border-color:#2a2f3c;">
+        
+        <h4>💀 最终抉择</h4>
+        <p>你已经收集了所有记忆碎片。现在需要选择执行哪种仪式。</p>
+        <p style="font-size:11px; color:#ef4444;">警告：这个选择不可逆。将决定六位角色的命运。</p>
+        
+        <div style="display:flex; gap:15px; margin-top:15px;">
+            <button class="puzzle-btn" id="choice-bad" style="background:#3b1818; border-color:#e11d48; color:#e11d48;">执行原仪式 · 让她毕业</button>
+            <button class="puzzle-btn" id="choice-good" style="background:#132d24; border-color:#10b981; color:#10b981;">执行反制代码 · 剥离乔时</button>
+        </div>
+        <div id="choice-result" class="puzzle-result" style="display:none;"></div>
+    </div>
+
+    <!-- 《楼里楼外》全文展示区 - 解码成功后显示 -->
+    <div class="puzzle-box" id="full-article" style="display:none;">
+        <h4>📖 《楼里楼外》 · 乔时 · 全文</h4>
+        <div style="font-family:'Courier New', monospace; font-size:11px; line-height:1.8; max-height:450px; overflow-y:auto; background:#0b0e14; padding:15px; margin-top:10px;">
+            <p><strong>【第一段】</strong><br>
+            我来到这栋楼的第一天，就觉得它在看我。<br>
+            不是比喻。<br>
+            是走廊尽头的窗户。是楼梯间的镜子。是中庭那棵榕树的气根在风里晃动的节奏。<br>
+            它们都在看我。<br>
+            后来我才知道，那不是“看”。是在等我。<br><br>
+            入学的第一周，我失眠了。不是因为认床，是因为墙壁里有声音。很低，很稳，像心跳。我贴着墙面听，那声音不在墙里，在地底下。有人在地底下呼吸。<br><br>
+            室友问我为什么总在熄灯后出门。我说去上厕所。其实我去了东侧的铁门。那扇门被铁链锁着，但锁是新的。新的锁，锁一扇旧门。说明有人不想让里面的东西出来——或者，不想让外面的人进去。<br><br>
+            我蹲在铁门前，摸到了地上的划痕。有人在这里数过步数。<br>
+            从铁门到中庭榕树下，十二步。<br>
+            我第一次知道这件事的时候，还不知道它会把我带到哪里。</p>
+
+            <p><strong>【第二段】</strong><br>
+            我翻遍了B2的每一个档案柜。然后发现自己不是第一个。<br><br>
+            B2在地下二层。入口在东侧铁门后面的楼梯，被封死了，但封得不彻底。我用了三天，撬开了侧门的一颗螺丝。只一颗。门就开了。<br><br>
+            里面的空气是冷的，冷得不正常。不是那种潮湿的地下室冷，是时间停滞的冷。<br><br>
+            档案柜是军绿色的，编号从0001到1999。我找到了1979年的校刊底稿。纸张发黄，字迹模糊，但最后一段我看得很清楚。因为我写过同样的话。一模一样的字，一模一样的顺序。<br>
+            是我的笔迹。<br>
+            但我从来没有写过那篇文章。<br><br>
+            我翻了那一期的作者栏。全是笔名。有一篇没有署名。我对照了笔迹鉴定——是我。不是我“以后”会写，是“以前”就有人写过。<br>
+            是1979年的某个人，写了和我一样的文字。<br><br>
+            我把那页撕下来，夹在日记本里。后来日记本不见了。后来我发现，那篇文章不是我“找到”的。是有人放在那里，等我来拿的。<br>
+            B2在等我。<br>
+            就像1号楼等我一样。</p>
+
+            <p><strong>【第三段】</strong><br>
+            她告诉我，时间是可以借的。<br><br>
+            B2里有一台老式磁带录音机。我不知道谁把它放在那里，但它一直在转。磁带没有尽头，或者说，磁带被循环了无数次。<br><br>
+            我第一次听到那个声音的时候，以为是我自己的回声。<br>
+            “你缺多少，就从后来的人身上拿。”<br>
+            不是建议。是陈述。像在说一个物理定律。像在说重力。<br><br>
+            我问你是谁。录音机没有回答。但那天晚上我回宿舍的时候，书桌上多了一封信。没有邮戳，没有署名。信纸上只有一句话：<br>
+            “你缺两年。她没读完的那两年。”<br><br>
+            是我母亲。<br><br>
+            我在入学第二周就知道了。母亲1980年代初在这所学院读过，大二退学，理由是“不宜继续”。我一直以为那是精神问题。但档案柜编号0371的文件夹里，没有病历，没有心理评估。<br>
+            只有一张学籍卡。<br>
+            退学理由栏，红章盖着四个字：“不宜继续。”<br>
+            但背面有人用铅笔写了一行小字：<br>
+            “她去了B2。再也没有回来。”<br><br>
+            母亲不是被退学的。她消失了。和乔时一样。<br>
+            只不过她回来了——以另一种方式。她把那两年的执念塞给了我。<br><br>
+            我翻到学籍卡最后一页的时候，听到了录音机里那个声音第二次说话：<br>
+            “你不想成为下一个吗？”<br>
+            我说不想。<br>
+            但我的手没有松开那张卡。</p>
+
+            <p><strong>【第四段】</strong><br>
+            我有时候想，如果有一天这栋楼不在了，它是不是就真的消失了？<br>
+            或者它会留在我们每个人的记忆里。<br>
+            就这样，一直一直，在某个地方，继续亮着灯。<br><br>
+            我不知道写下这段话的时候，我是谁。<br>
+            是1999年刚入学的乔时？还是2001年躲在B2里不敢出去的乔时？还是1979年那个没有署名的女人？<br>
+            也许我们是同一个人。<br>
+            也许这栋楼就是我们的身体。每一块砖是一段记忆。每一扇窗是一个还没讲完的故事。<br><br>
+            铁门会生锈。电梯会停运。榕树会被砍掉。<br>
+            但B2不会。<br>
+            它在地底下。一直在。等着下一个失眠的女孩，数着十二步，撬开那颗螺丝。<br>
+            然后问她同样的话：<br>
+            “你缺多少？”<br><br>
+            我没有回答。<br>
+            我把它写成了文章。<br><br>
+            如果你在读这段话——说明你已经在B2里了。<br>
+            不，不对。<br>
+            说明B2已经在你的记忆里了。<br>
+            它会一直亮着灯。<br>
+            等你来续。</p>
+
+            <p style="text-align:right; margin-top:20px;">——乔时，1999届中文系 · 永远大一</p>
+        </div>
+    </div>
+
+    <div class="reply-box reply-area">
+        <h4>发表回复</h4>
+        <textarea class="reply-textarea" placeholder="输入回复内容..."></textarea>
+        <button class="reply-btn" id="submit-reply">提交回复</button>
+        <div id="reply-result"></div>
+    </div>
+
+    <div style="margin: 15px; text-align: center;">
+        <a href="forum-4.html" style="color:#38bdf8;">← 返回直播/仪式执行区</a>
+    </div>
+
+    <div class="footer">
+        <p>未知领域：izna — 重叠的1号楼 · 失落年华的匿名回音</p>
+        <p>Powered by izna BBS © 2004-2026</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    const correctText = "我有时候想，如果有一天这栋楼不在了，它是不是就真的消失了？或者它会留在我们每个人的记忆里，就这样，一直一直，在某个地方，继续亮着灯。";
+    
+    document.getElementById("base64-btn")?.addEventListener("click", () => {
+        const input = document.getElementById("base64-input")?.value.trim();
+        const resultDiv = document.getElementById("base64-result");
+        // 简化的验证：检查关键内容
+        if (input.includes("继续亮着灯") || input.includes("它是不是就真的消失了")) {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "✅ 解码成功！《楼里楼外》全文已解锁。";
+            // 显示完整文章
+            document.getElementById("full-article").style.display = "block";
+            window.iznaAPI?.unlockMemory('sefi', 45);
+        } else {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "❌ 解码错误。提示：需要Base64解码两次，然后按偏旁笔画数排序。";
+        }
+    });
+    
+    document.getElementById("choice-bad")?.addEventListener("click", () => {
+        const resultDiv = document.getElementById("choice-result");
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = "⚠️ 你选择了执行原仪式。乔时获得完整四年记忆，六位角色失去部分记忆...<br><a href='ending_bad.html' style='color:#e11d48;'>→ 进入结局</a>";
+        localStorage.setItem('izna_ending', 'bad');
+    });
+    
+    document.getElementById("choice-good")?.addEventListener("click", () => {
+        const resultDiv = document.getElementById("choice-result");
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = "✨ 你选择了执行反制代码。乔时从时间褶皱中被剥离，六位角色记忆回归...<br><a href='ending_good.html' style='color:#10b981;'>→ 进入真结局</a>";
+        localStorage.setItem('izna_ending', 'good');
+    });
+    
+    document.getElementById("submit-reply")?.addEventListener("click", () => {
+        const replyText = document.querySelector(".reply-textarea")?.value;
+        if (replyText && (replyText.includes("反制") || replyText.includes("剥离"))) {
+            window.iznaAPI?.showSystemMessage("你发现了真相。反制代码是唯一的出路。");
+        } else if (replyText && replyText.includes("毕业")) {
+            window.iznaAPI?.showSystemMessage("让她毕业不是终点。请三思。");
+        } else if (replyText) {
+            window.iznaAPI?.showSystemMessage("郑世菲正在分析你的回复。");
+        }
+    });
+</script>
+</body>
+</html>

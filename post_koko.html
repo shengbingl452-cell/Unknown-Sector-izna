@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知领域：izna - 帖子：这里没有2024届，可我存在</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <span class="logo-cn">⌇ 未知领域：izna ⌇</span>
+            <span class="logo-en">The Unknown Zone: izna</span>
+        </div>
+        <div class="banner">
+            <span class="banner-text">灵异档案馆 · 1号楼专版</span>
+            <span class="banner-date">since 2004</span>
+        </div>
+        <div class="warning">
+            ⚠️ 系统警告：检测到时间污染源 | B2档案异常 | 访问记录异常 ⚠️
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="forum-1.html" class="active">怪谈档案馆</a>
+        <a href="forum-2.html">失踪人口档案库</a>
+        <a href="forum-3.html">时空观测记录</a>
+        <a href="forum-4.html">直播/仪式执行区</a>
+        <a href="#">站务管理</a>
+    </div>
+
+    <div class="post-container">
+        <div class="post-header">
+            <div class="post-title">【夹缝】这里没有2024届，可我存在</div>
+            <div class="post-meta">
+                <span>作者：KOKO（楢井瑚瑚）</span>
+                <span>发表于：2025-07-19 12:04:00</span>
+                <span>阅读：203 | 回复：16</span>
+            </div>
+            <div class="post-author-info">
+                <div class="post-avatar">
+                    <div class="avatar">🏗️</div>
+                </div>
+                <div>
+                    <div>KOKO（楢井瑚瑚）</div>
+                    <div style="font-size:10px; color:#84cc16;">UID: koko_0611 | 注册: —</div>
+                    <div style="font-size:10px; color:#64748b;">签名: 我是谁记忆的倒影？</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <p>我查了学校的招生记录。2024年，学校没有招生。因为施工。</p>
+            
+            <p>但我记得入学。我记得开学典礼。我记得我的宿舍在三楼，窗户正对着中庭的榕树。</p>
+            
+            <p>可是，这些记忆是真的吗？</p>
+            
+            <div class="photo-placeholder">
+                📷 [照片] 施工中的1号楼 · 拍摄于2025-07-19 03:17<br>
+                <span style="font-size:10px; color:#64748b;">（脚手架阴影每天下午都会指向同一个位置）</span>
+            </div>
+            
+            <p>Jungeun告诉过我，我们不存在于任何一届。我们是“夹缝”里的人。</p>
+            
+            <p>我不理解这句话。但最近，我发现自己的记忆在消失。昨天记得的事，今天就想不起来了。不是忘了——是被拿走了。</p>
+            
+            <div class="photo-placeholder">
+                📝 [日记残页]<br>
+                <span style="font-size:10px; color:#64748b;">“2025年7月18日。我写下这句话的时候，已经不确定自己是否写过。同样的字迹，但不是我写的。”</span>
+            </div>
+            
+            <p>脚手架阴影每天下午三点十七分指向榕树正下方。那里有什么？</p>
+            
+            <p style="margin-top:15px; padding:8px; background:#1a1f2a; border-left:3px solid #fbbf24;">
+                <strong>📌 补充信息：</strong><br>
+                我数过。从榕树到阴影指向的点，需要走12步。下面是水泥地面，但踩上去的声音是空的。<br>
+                下面是B2。
+            </p>
+        </div>
+
+        <div class="post-footer">
+            <span>👍 点赞 18</span>
+            <span>💬 回复 16</span>
+            <span>🔖 收藏</span>
+        </div>
+    </div>
+
+    <!-- 谜题交互区 -->
+    <div class="puzzle-box">
+        <h4>🔐 记忆碎片解锁 · 存在证明</h4>
+        <p>KOKO的记忆正在消失。你需要帮她确认自己的存在。</p>
+        <p style="font-size:11px; color:#94a3b8;">提示：她的“名义入学年份”与现实之间有一个差值</p>
+        
+        <input type="text" id="exist-input" class="puzzle-input" placeholder="输入答案（数字）...">
+        <button class="puzzle-btn" id="exist-btn">验证存在证明</button>
+        <div id="exist-result" class="puzzle-result" style="display:none;"></div>
+        
+        <hr style="margin:15px 0; border-color:#2a2f3c;">
+        
+        <h4>📐 脚手架阴影谜题</h4>
+        <p>阴影每天指向同一个位置。从榕树到该点需要多少步？</p>
+        <input type="text" id="steps-input" class="puzzle-input" placeholder="输入步数...">
+        <button class="puzzle-btn" id="steps-btn">验证</button>
+        <div id="steps-result" class="puzzle-result" style="display:none;"></div>
+    </div>
+
+    <div class="reply-box reply-area">
+        <h4>发表回复</h4>
+        <textarea class="reply-textarea" placeholder="输入回复内容...（谜题答案请直接输入）"></textarea>
+        <button class="reply-btn" id="submit-reply">提交回复</button>
+        <div id="reply-result"></div>
+    </div>
+
+    <div style="margin: 15px; text-align: center;">
+        <a href="forum-1.html" style="color:#38bdf8;">← 返回怪谈档案馆</a>
+    </div>
+
+    <div class="footer">
+        <p>未知领域：izna — 重叠的1号楼 · 失落年华的匿名回音</p>
+        <p>Powered by izna BBS © 2004-2026</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    document.getElementById("exist-btn")?.addEventListener("click", () => {
+        const input = document.getElementById("exist-input")?.value.trim();
+        const resultDiv = document.getElementById("exist-result");
+        // 名义2024届但现实不存在 → 差值指向2025夹缝
+        if (input === "2025" || input === "1" || input.includes("夹缝")) {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "✅ 存在证明成立。KOKO是2025年停工夹缝中的记忆侵蚀体。<br>她的感受是真实的，即使她不存在于任何一届。";
+            window.iznaAPI?.unlockMemory('koko', 35);
+        } else {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "❌ 答案错误。提示：她的名义入学年份是2024，但现实中没有2024届。她存在于哪一年？";
+        }
+    });
+    
+    document.getElementById("steps-btn")?.addEventListener("click", () => {
+        const input = document.getElementById("steps-input")?.value.trim();
+        const resultDiv = document.getElementById("steps-result");
+        if (input === "12") {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "✅ 正确。B2在榕树正下方，向下12步。";
+        } else {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "❌ 请重新数一遍。注意阴影指向的位置。";
+        }
+    });
+    
+    document.getElementById("submit-reply")?.addEventListener("click", () => {
+        const replyText = document.querySelector(".reply-textarea")?.value;
+        if (replyText && replyText.includes("B2")) {
+            window.iznaAPI?.showSystemMessage("B2向下12步。但小心，那里不是你应该去的地方。");
+        } else if (replyText && replyText.includes("12")) {
+            window.iznaAPI?.showSystemMessage("12步。记住这个数字。");
+        } else if (replyText) {
+            window.iznaAPI?.showSystemMessage("回复已提交。KOKO会看到你的留言。");
+        }
+    });
+</script>
+</body>
+</html>

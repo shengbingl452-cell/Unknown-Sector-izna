@@ -1,128 +1,268 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>校史论坛 - B2·灯</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="noise-layer" aria-hidden="true"></div>
-    <main class="forum-container">
-      <header class="forum-header">
-        <div class="topline">
-          <span>校史论坛 Archive BBS</span>
-          <span>游客身份：未登录</span>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知领域：izna - 灵异档案馆 · 1号楼专版</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- 论坛头部 -->
+    <div class="header">
+        <div class="logo">
+            <span class="logo-cn">⌇ 未知领域：izna ⌇</span>
+            <span class="logo-en">The Unknown Zone: izna</span>
         </div>
-        <h1 class="forum-title">校史论坛</h1>
-        <p class="forum-subtitle">非官方学生社区 · 建站时间 2009-03-17 · 当前板块：B2·灯</p>
-        <div class="system-banner">
-          <span class="badge">诡</span>
-          <span>板块简介：<em>我在等你们找到我。</em></span>
+        <div class="banner">
+            <span class="banner-text">灵异档案馆 · 1号楼专版</span>
+            <span class="banner-date">since 2004</span>
         </div>
-      </header>
-
-      <nav class="forum-nav" aria-label="论坛导航">
-        <button class="nav-button active" data-board="b2">B2·灯</button>
-        <button class="nav-button" data-board="archive">旧楼档案</button>
-        <button class="nav-button" data-board="help">报修/求助</button>
-        <button class="nav-button" data-board="system">系统公告</button>
-      </nav>
-
-      <section class="status-strip">
-        <span>今日帖数：17</span>
-        <span>在线：68 人</span>
-        <span>不可见帖子：5</span>
-        <span class="blink">最后访问：2001-03-17 03:17</span>
-      </section>
-
-      <section class="layout-grid">
-        <div class="thread-list" aria-label="帖子列表">
-          <table class="forum-table">
-            <thead>
-              <tr>
-                <th class="col-title">主题</th>
-                <th>作者</th>
-                <th>回复</th>
-                <th>最后更新</th>
-              </tr>
-            </thead>
-            <tbody id="threadRows"></tbody>
-          </table>
-          <div class="forum-pagination">
-            <a href="#" aria-label="第一页">1</a>
-            <a href="#" aria-label="第二页">2</a>
-            <a href="#" aria-label="第三页">3</a>
-            <a href="#" aria-label="下一页">下一页</a>
-          </div>
+        <div class="warning">
+            ⚠️ 系统警告：检测到时间污染源 | B2档案异常 | 访问记录异常 ⚠️
         </div>
+    </div>
 
-        <aside class="side-panel">
-          <div class="panel-title">板块资料</div>
-          <dl class="board-meta">
-            <dt>创建者</dt>
-            <dd>未知</dd>
-            <dt>创建时间</dt>
-            <dd class="corrupt">----</dd>
-            <dt>版主</dt>
-            <dd>无法读取</dd>
-            <dt>板块 ID</dt>
-            <dd>B2-LAMP-0317</dd>
-          </dl>
-          <button class="old-button" id="toggleHidden">显示隐藏字</button>
-          <button class="old-button" id="openProfile">查看 01栋-B2-灯</button>
-          <div class="panel-title terminal-title">调查终端</div>
-          <div class="terminal-panel">
-            <div class="terminal-line" id="terminalStatus">状态：尚未建立坐标。</div>
-            <label class="terminal-label" for="answerInput">输入线索 / 密码</label>
-            <div class="terminal-input-row">
-              <input id="answerInput" class="terminal-input" autocomplete="off" placeholder="例如 QISHI" />
-              <button class="old-button" id="submitAnswer">提交</button>
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="index.html" class="active">首页</a>
+        <a href="forum-1.html">怪谈档案馆</a>
+        <a href="forum-2.html">失踪人口档案库</a>
+        <a href="forum-3.html">时空观测记录</a>
+        <a href="forum-4.html">直播/仪式执行区</a>
+        <a href="#">站务管理</a>
+    </div>
+
+    <!-- 统计信息 -->
+    <div class="stats">
+        <span>当前在线: <span class="online-count">6</span> 位叙事者 + 游客_317</span>
+        <span>今日帖子: 17</span>
+        <span>总帖数: 1999</span>
+        <span>最后更新: 2026-09-21 03:17</span>
+    </div>
+
+    <!-- 版块列表 -->
+    <div class="forum-list">
+
+        <!-- 公告栏 -->
+        <div class="category">
+            <div class="category-header">
+                <span>📢 公告栏</span>
             </div>
-            <div class="terminal-help">可尝试：名字、密码、楼层、仪式词。</div>
-          </div>
-          <div class="panel-title terminal-title">已取得线索</div>
-          <ul class="inventory-list" id="inventoryList">
-            <li class="empty-clue">暂无。点击帖子里的附件或异常文字。</li>
-          </ul>
-          <div class="hint-box">
-            <span class="tiny-label">页脚缩放到 200% 可见</span>
-            <p>本论坛自2009年建立以来，共有 <button class="text-button" id="ghostUser">1</button> 名从未注册的用户。</p>
-          </div>
-        </aside>
-      </section>
+            <table class="forum-table">
+                <tr>
+                    <td class="icon">📌</td>
+                    <td class="topic"><a href="#" class="sticky">[系统] 版规及免责声明</a></td>
+                    <td class="author">系统</td>
+                    <td class="last-post">2004-09-01</td>
+                </tr>
+                <tr>
+                    <td class="icon">⚠️</td>
+                    <td class="topic"><a href="#" class="sticky warning-link" id="system-report-link">[系统] 时间污染警告：如发现记忆异常请立即退出</a></td>
+                    <td class="author">系统</td>
+                    <td class="last-post">2026-09-01</td>
+                </tr>
+            </table>
+        </div>
 
-      <section class="post-view" id="postView" aria-live="polite">
-        <div class="post-empty">点击上方帖子标题查看内容。</div>
-      </section>
+        <!-- 怪谈档案馆 · 1号楼专版 -->
+        <div class="category">
+            <div class="category-header">
+                <span>🔮 怪谈档案馆 · 1号楼专版</span>
+            </div>
+            <table class="forum-table">
+                <tr>
+                    <td class="icon">🔥</td>
+                    <td class="topic"><a href="post_mai.html" class="post-link">[整理] 关于1号楼红砖墙倒影的档案记录</a></td>
+                    <td class="author">MAI（富冈茉衣）</td>
+                    <td class="last-post">2026-09-02</td>
+                </tr>
+                <tr>
+                    <td class="icon">🔥</td>
+                    <td class="topic"><a href="post_jungmin.html" class="post-link">[惊] 我梦游时拍到了东侧铁门的门缝光(多图)</a></td>
+                    <td class="author">方智玟</td>
+                    <td class="last-post">2026-09-14</td>
+                </tr>
+                <tr>
+                    <td class="icon">✨</td>
+                    <td class="topic"><a href="post_sefi.html" class="post-link">[记录] 电梯门反光中出现不存在的按钮区</a></td>
+                    <td class="author">郑世菲</td>
+                    <td class="last-post">2026-09-01</td>
+                </tr>
+                <tr>
+                    <td class="icon">📄</td>
+                    <td class="topic"><a href="post_koko.html" class="post-link">[夹缝] 这里没有2024届，可我存在</a></td>
+                    <td class="author">KOKO（楢井瑚瑚）</td>
+                    <td class="last-post">2025-07-19</td>
+                </tr>
+                <tr>
+                    <td class="icon">🌙</td>
+                    <td class="topic"><a href="post_jungeun.html" class="post-link">[观测] 无月夜的月光边缘</a></td>
+                    <td class="author">Jungeun</td>
+                    <td class="last-post">2025-08-11</td>
+                </tr>
+                <tr>
+                    <td class="icon">📺</td>
+                    <td class="topic"><a href="post_sarang.html" class="post-link">[直播预告] 电梯0层仪式 · 今晚执行</a></td>
+                    <td class="author">柳莎朗</td>
+                    <td class="last-post">2026-09-20</td>
+                </tr>
+            </table>
+        </div>
 
-      <footer class="forum-footer">
-        <span>Powered by OldSchool BBS 2.17</span>
-        <span class="footer-secret">如果这行字被看见，希望有人能记得我来过。</span>
-      </footer>
-    </main>
+        <!-- 失踪人口档案库 -->
+        <div class="category">
+            <div class="category-header">
+                <span>🕯️ 失踪人口档案库</span>
+            </div>
+            <table class="forum-table">
+                <tr>
+                    <td class="icon">📰</td>
+                    <td class="topic"><a href="forum-2.html#archive1" class="post-link">[附件] 1999年《新城晚报》失踪通报扫描件</a></td>
+                    <td class="author">档案员</td>
+                    <td class="last-post">2026-09-05</td>
+                </tr>
+                <tr>
+                    <td class="icon">📖</td>
+                    <td class="topic"><a href="forum-2.html#archive3" class="post-link-locked">[加密] 校刊《楼里楼外》残页(需权限)</a></td>
+                    <td class="author">系统</td>
+                    <td class="last-post">—</td>
+                </tr>
+                <tr>
+                    <td class="icon">🔒</td>
+                    <td class="topic"><a href="forum-2.html#archive4" class="post-link-locked">[隐藏] 2001年封存记录(权限不足)</a></td>
+                    <td class="author">系统</td>
+                    <td class="last-post">—</td>
+                </tr>
+            </table>
+        </div>
 
-    <dialog class="profile-modal" id="profileModal">
-      <form method="dialog">
-        <div class="modal-title">用户资料：01栋-B2-灯</div>
-        <table class="profile-table">
-          <tr>
-            <th>注册时间</th>
-            <td>1999-10-22 03:17</td>
-          </tr>
-          <tr>
-            <th>个人简介</th>
-            <td>校刊编委会。喜欢写字。想好好毕业。</td>
-          </tr>
-          <tr>
-            <th>最后登录</th>
-            <td class="blink">2026-09-25 00:00</td>
-          </tr>
-        </table>
-        <button class="old-button modal-close">关闭</button>
-      </form>
-    </dialog>
+        <!-- 时空观测记录 -->
+        <div class="category">
+            <div class="category-header">
+                <span>⏳ 时空观测记录</span>
+            </div>
+            <table class="forum-table">
+                <tr>
+                    <td class="icon">🏗️</td>
+                    <td class="topic"><a href="post_koko.html" class="post-link">[日记] 脚手架阴影每天指向同一个位置</a></td>
+                    <td class="author">KOKO（楢井瑚瑚）</td>
+                    <td class="last-post">2025-07-19</td>
+                </tr>
+                <tr>
+                    <td class="icon">🌑</td>
+                    <td class="topic"><a href="post_jungeun.html" class="post-link">[矛盾] 关于“同一天”的七组描述(与柳莎朗对照)</a></td>
+                    <td class="author">Jungeun</td>
+                    <td class="last-post">2025-08-15</td>
+                </tr>
+            </table>
+        </div>
 
-    <script src="./app.js"></script>
-  </body>
+        <!-- 直播/仪式执行区 -->
+        <div class="category">
+            <div class="category-header">
+                <span>📡 直播/仪式执行区</span>
+            </div>
+            <table class="forum-table">
+                <tr>
+                    <td class="icon">🔴</td>
+                    <td class="topic"><a href="post_sarang.html" class="post-link">[直播中] 电梯0层仪式 · 按住0数到十七</a></td>
+                    <td class="author">柳莎朗</td>
+                    <td class="last-post">2026-09-20</td>
+                </tr>
+                <tr>
+                    <td class="icon">💻</td>
+                    <td class="topic"><a href="post_sefi.html" class="post-link">[执行] ritual_final.txt 解码与执行</a></td>
+                    <td class="author">郑世菲</td>
+                    <td class="last-post">2026-09-21</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 回收站(隐藏) -->
+        <div class="category hidden-category">
+            <div class="category-header">
+                <span>🗑️ 回收站 [隐藏版块 - 需特殊权限]</span>
+            </div>
+            <table class="forum-table">
+                <tr>
+                    <td class="icon">💀</td>
+                    <td class="topic"><a href="#" class="post-link-dead">[已沉底] 2001年封存档案备份</a></td>
+                    <td class="author">访客_1999</td>
+                    <td class="last-post">2001-03-17</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- 记忆碎片收集进度条 -->
+    <div class="memory-progress">
+        <div class="memory-title">
+            <span>📦 记忆碎片收集进度</span>
+            <span class="memory-warning">警告：拼图达到100%时，六位角色记忆将被永久夺取</span>
+        </div>
+        <div class="progress-bars">
+            <div class="progress-item">
+                <span>MAI（富冈茉衣）</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <span class="progress-status locked">🔒 未解锁</span>
+            </div>
+            <div class="progress-item">
+                <span>方智玟</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <span class="progress-status locked">🔒 未解锁</span>
+            </div>
+            <div class="progress-item">
+                <span>KOKO（楢井瑚瑚）</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <span class="progress-status locked">🔒 未解锁</span>
+            </div>
+            <div class="progress-item">
+                <span>Jungeun</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <span class="progress-status locked">🔒 未解锁</span>
+            </div>
+            <div class="progress-item">
+                <span>柳莎朗</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <span class="progress-status locked">🔒 未解锁</span>
+            </div>
+            <div class="progress-item">
+                <span>郑世菲</span>
+                <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
+                <span class="progress-status locked">🔒 未解锁</span>
+            </div>
+        </div>
+        <div class="total-progress">
+            乔时拼图完成度：<span id="total-percent">0%</span>
+        </div>
+    </div>
+
+    <!-- 侧边栏区域 -->
+    <div class="sidebar-zone" style="margin-top:20px;">
+        <div class="sidebar-item">
+            <h4>📜 乔时 · 档案</h4>
+            <div style="font-size:11px; margin-bottom:10px;">
+                姓名：乔时<br>
+                出生：1981年<br>
+                入学：1999级中文系，大一<br>
+                真实节点：1999-03-17 03:17<br>
+                官方最后目击：1999-10-22
+            </div>
+            <button class="btn" onclick="location.href='bio_qiaoshi.html'" style="width:100%; background:#2a2f3c; border:none; color:#e2e8f0; padding:8px; cursor:pointer;">📖 乔时完整生平</button>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>未知领域：izna — 重叠的1号楼 · 失落年华的匿名回音</p>
+        <p>Powered by izna BBS © 2004-2026 | 当前时间: 2026-09-21 03:17:00</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>

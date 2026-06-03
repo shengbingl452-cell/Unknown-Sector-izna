@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知领域：izna - 失踪人口档案库</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    .locked-badge {
+        background: #2a1a1a;
+        color: #ef4444;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 9px;
+        margin-left: 8px;
+    }
+    .unlocked-badge {
+        background: #132d24;
+        color: #10b981;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 9px;
+        margin-left: 8px;
+    }
+    .password-input-group {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        align-items: center;
+    }
+    .password-input-group input {
+        flex: 1;
+        background: #1a1f2a;
+        border: 1px solid #2a2f3c;
+        color: #e2e8f0;
+        padding: 6px 10px;
+        font-family: monospace;
+        font-size: 11px;
+    }
+    .archive-card {
+        background: #0b0e14;
+        border: 1px solid #2a2f3c;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+    .archive-header {
+        background: #151a24;
+        padding: 10px 15px;
+        border-bottom: 1px solid #2a2f3c;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .archive-header:hover {
+        background: #1a1f2a;
+    }
+    .archive-title {
+        font-weight: bold;
+        color: #c7b28b;
+        font-size: 12px;
+    }
+    .archive-status {
+        font-size: 10px;
+    }
+    .archive-body {
+        padding: 15px;
+        display: none;
+        border-top: 1px solid #1a1f2a;
+    }
+    .evidence-box {
+        background: #0c0f16;
+        border-left: 3px solid #e11d48;
+        padding: 12px;
+        margin: 10px 0;
+        font-size: 11px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 论坛头部 -->
+    <div class="header">
+        <div class="logo">
+            <span class="logo-cn">⌇ 未知领域：izna ⌇</span>
+            <span class="logo-en">The Unknown Zone: izna</span>
+        </div>
+        <div class="banner">
+            <span class="banner-text">失踪人口档案库</span>
+            <span class="banner-date">since 2004</span>
+        </div>
+        <div class="warning">
+            ⚠️ 系统警告：检测到时间污染源 | B2档案异常 | 访问记录异常 ⚠️
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="forum-1.html">怪谈档案馆</a>
+        <a href="forum-2.html" class="active">失踪人口档案库</a>
+        <a href="forum-3.html">时空观测记录</a>
+        <a href="forum-4.html">直播/仪式执行区</a>
+        <a href="#">站务管理</a>
+    </div>
+
+    <!-- 版块说明 -->
+    <div style="margin: 15px; padding: 10px; background: #0b0e14; border-left: 3px solid #e11d48;">
+        <span style="font-size: 11px;">🕯️ 本版存放历年失踪案件档案。部分档案需要特定权限才能查看。<br>
+        📌 提示：档案密码与学生证末四位相同。</span>
+    </div>
+
+    <!-- ==================== 档案1：失踪报道（已解锁） ==================== -->
+    <div class="archive-card">
+        <div class="archive-header" onclick="toggleArchive('archive1')">
+            <span class="archive-title">📰 1999年《新城晚报》失踪通报扫描件</span>
+            <span class="archive-status"><span class="unlocked-badge">已解锁</span></span>
+        </div>
+        <div id="archive1" class="archive-body">
+            <iframe src="missing_news.html" style="width:100%; min-height:400px; border:none; background:#fff;"></iframe>
+            <div class="evidence-box">
+                💡 底部隐写信息：<br>
+                「10月22日 / B2 / 3717 / 她不是离校」
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 档案2：学生证信息（半解锁） ==================== -->
+    <div class="archive-card">
+        <div class="archive-header" onclick="toggleArchive('archive2')">
+            <span class="archive-title">📇 乔时 · 学生证信息</span>
+            <span class="archive-status"><span class="unlocked-badge">已解锁</span></span>
+        </div>
+        <div id="archive2" class="archive-body">
+            <div class="photo-placeholder" style="text-align:center;">
+                📷 [学生证扫描件]<br>
+                <span style="font-size:10px; color:#64748b;">【图片加载中】学生证残影</span>
+            </div>
+            <div class="evidence-box">
+                <strong>姓名</strong>：乔□<br>
+                <strong>入学年份</strong>：1999<br>
+                <strong>专业</strong>：中文系<br>
+                <strong>学号末四位</strong>：3717<br>
+                <strong>状态</strong>：1999年10月后无记录<br>
+                <strong>边缘灰度条隐藏信息</strong>：1999-03-17 / 1999-10-22
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 档案3：校刊《楼里楼外》残页（需密码） ==================== -->
+    <div class="archive-card" id="archive3-card">
+        <div class="archive-header" onclick="toggleArchive('archive3')">
+            <span class="archive-title">📖 校刊《楼里楼外》残页</span>
+            <span class="archive-status" id="archive3-status"><span class="locked-badge">🔒 需密码</span></span>
+        </div>
+        <div id="archive3" class="archive-body">
+            <div id="archive3-locked">
+                <p style="font-size:11px; color:#94a3b8;">该档案已被加密。请输入密码解锁：</p>
+                <div class="password-input-group">
+                    <input type="text" id="archive3-pwd" placeholder="输入密码...">
+                    <button class="puzzle-btn" id="archive3-unlock">解锁</button>
+                </div>
+                <div id="archive3-error" style="color:#ef4444; font-size:10px; margin-top:8px;"></div>
+            </div>
+            <div id="archive3-content" style="display:none;">
+                <div style="font-family:'Courier New', monospace; font-size:11px; line-height:1.6;">
+                    <p><strong>《楼里楼外》残页 · 节选</strong></p>
+                    <p>“我来到这栋楼的第一天，就觉得它在看我。<br>
+                    不是比喻。<br>
+                    是走廊尽头的窗户。是楼梯间的镜子。是中庭那棵榕树的气根在风里晃动的节奏。<br>
+                    它们都在看我。<br>
+                    后来我才知道，那不是“看”。是在等我。”</p>
+                    <p style="color:#94a3b8;">...（全文需完成仪式后解锁）</p>
+                </div>
+                <div class="evidence-box">
+                    💡 笔迹鉴定：该文章与乔时的笔迹匹配度99.7%。<br>
+                    但纸张碳测年显示纸张年代为1979年。结论存疑。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 档案4：2001年封存记录（需密码） ==================== -->
+    <div class="archive-card" id="archive4-card">
+        <div class="archive-header" onclick="toggleArchive('archive4')">
+            <span class="archive-title">🔒 2001年封存记录</span>
+            <span class="archive-status" id="archive4-status"><span class="locked-badge">🔒 需密码</span></span>
+        </div>
+        <div id="archive4" class="archive-body">
+            <div id="archive4-locked">
+                <p style="font-size:11px; color:#94a3b8;">该档案已被封存。请输入密码解锁：</p>
+                <div class="password-input-group">
+                    <input type="text" id="archive4-pwd" placeholder="输入密码...">
+                    <button class="puzzle-btn" id="archive4-unlock">解锁</button>
+                </div>
+                <div id="archive4-error" style="color:#ef4444; font-size:10px; margin-top:8px;"></div>
+            </div>
+            <div id="archive4-content" style="display:none;">
+                <div style="font-family:'Courier New', monospace; font-size:11px; line-height:1.6; background:#0b0e14; padding:15px;">
+                    <p>╔══════════════════════════════════════════════════════════════════╗<br>
+                    ║                    封存记录 · 档案号：2001-0317                    ║<br>
+                    ╠══════════════════════════════════════════════════════════════════╣<br>
+                    ║  执行时间：2001年3月17日 00:00:00                                 ║<br>
+                    ║  执行IP：127.0.0.1 (内部)                                         ║<br>
+                    ║  操作权限：系统级 · 不可追溯                                       ║<br>
+                    ║                                                                    ║<br>
+                    ║  封存内容：                                                       ║<br>
+                    ║  - 乔时(1999级)全部学籍档案                                        ║<br>
+                    ║  - 1999年失踪案件相关报道                                          ║<br>
+                    ║  - 《楼里楼外》原文及底稿                                          ║<br>
+                    ║  - B2平面图及施工记录                                              ║<br>
+                    ║                                                                    ║<br>
+                    ║  封存原因：[记录被覆盖]                                            ║<br>
+                    ║                                                                    ║<br>
+                    ║  [系统备注] 删除指令来自内部，IP无法追踪。                         ║<br>
+                    ║  操作者权限高于校长。                                             ║<br>
+                    ╚══════════════════════════════════════════════════════════════════╝</p>
+                    
+                    <p style="margin-top:15px; color:#94a3b8;">&gt; 附加信息：<br>
+                    &gt; 经后续核查，2001年封存操作与B2沙漏室的时间异常有关。<br>
+                    &gt; 乔时的档案被删除后，系统日志中出现了一条无法解释的记录：<br>
+                    &gt; "她不想被发现。但她想让别人来找她。"</p>
+                    
+                    <p style="margin-top:10px; color:#e11d48;">⚠️ 该记录已通过数字签名验证，但签名者身份无法确认。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 档案5：1999级中文系花名册（半解锁） ==================== -->
+    <div class="archive-card">
+        <div class="archive-header" onclick="toggleArchive('archive5')">
+            <span class="archive-title">🎓 1999级中文系花名册</span>
+            <span class="archive-status"><span class="unlocked-badge">已解锁</span></span>
+        </div>
+        <div id="archive5" class="archive-body">
+            <div class="evidence-box">
+                <strong>1999级中文系 · 新生名单</strong><br><br>
+                1. 乔时（学号：19990317）—— 状态：失踪<br>
+                2. 王某某 —— 状态：正常毕业<br>
+                3. 李某某 —— 状态：正常毕业<br>
+                ...（共47人）<br><br>
+                <span style="color:#94a3b8;">※ 乔时的学籍信息于2001年被标记为“删除”，非“休学”或“退学”。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 档案6：2025年施工事故报告 ==================== -->
+    <div class="archive-card">
+        <div class="archive-header" onclick="toggleArchive('archive6')">
+            <span class="archive-title">🏗️ 2025年施工事故调查报告（节选）</span>
+            <span class="archive-status"><span class="unlocked-badge">已解锁</span></span>
+        </div>
+        <div id="archive6" class="archive-body">
+            <div class="evidence-box">
+                <strong>报告编号：</strong>SG-2025-0317<br>
+                <strong>事故时间：</strong>2025年3月17日 03:17<br>
+                <strong>事故地点：</strong>1号楼B2区域<br>
+                <strong>事故描述：</strong>施工人员在挖掘过程中发现疑似人类遗骸<br>
+                <strong>后续处理：</strong>工程暂停，遗骸移交相关部门<br>
+                <strong>备注：</strong>遗骸身份有待确认。现场发现一枚损坏的学生证，编号末四位3717。
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 档案7：警方询问记录 ==================== -->
+    <div class="archive-card">
+        <div class="archive-header" onclick="toggleArchive('archive7')">
+            <span class="archive-title">📼 1999年警方询问记录（转录）</span>
+            <span class="archive-status"><span class="unlocked-badge">已解锁</span></span>
+        </div>
+        <div id="archive7" class="archive-body">
+            <div class="evidence-box">
+                <strong>询问对象：</strong>乔时室友 · 李某<br>
+                <strong>询问时间：</strong>1999年10月23日<br><br>
+                <strong>问</strong>：乔时失踪前是否有异常行为？<br>
+                <strong>答</strong>：她经常在熄灯后出去。我问她去哪，她说“去铁门那边”。<br><br>
+                <strong>问</strong>：什么铁门？<br>
+                <strong>答</strong>：1号楼东侧的铁门。她说那里有回声。<br><br>
+                <strong>问</strong>：她还说过什么吗？<br>
+                <strong>答</strong>：她说过一句很奇怪的话——“如果有一天我不见了，不要找我。我在楼里。”<br><br>
+                <span style="color:#94a3b8;">【记录结束】</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 返回链接 -->
+    <div style="margin: 15px; text-align: center;">
+        <a href="index.html" style="color:#38bdf8;">← 返回论坛首页</a>
+    </div>
+
+    <div class="footer">
+        <p>未知领域：izna — 重叠的1号楼 · 失落年华的匿名回音</p>
+        <p>Powered by izna BBS © 2004-2026</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // 展开/收起档案
+    function toggleArchive(archiveId) {
+        const element = document.getElementById(archiveId);
+        if (element.style.display === "none" || element.style.display === "") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+    
+    // 档案3：《楼里楼外》残页解锁
+    document.getElementById("archive3-unlock")?.addEventListener("click", () => {
+        const pwd = document.getElementById("archive3-pwd")?.value.trim();
+        if (pwd === "3717") {
+            document.getElementById("archive3-locked").style.display = "none";
+            document.getElementById("archive3-content").style.display = "block";
+            document.getElementById("archive3-status").innerHTML = '<span class="unlocked-badge">✅ 已解锁</span>';
+            document.getElementById("archive3-error").innerHTML = "";
+            window.iznaAPI?.showSystemMessage("《楼里楼外》残页已解锁。");
+        } else {
+            document.getElementById("archive3-error").innerHTML = "❌ 密码错误。提示：学生证末四位。";
+        }
+    });
+    
+    // 档案4：2001年封存记录解锁
+    document.getElementById("archive4-unlock")?.addEventListener("click", () => {
+        const pwd = document.getElementById("archive4-pwd")?.value.trim();
+        if (pwd === "3717") {
+            document.getElementById("archive4-locked").style.display = "none";
+            document.getElementById("archive4-content").style.display = "block";
+            document.getElementById("archive4-status").innerHTML = '<span class="unlocked-badge">✅ 已解锁</span>';
+            document.getElementById("archive4-error").innerHTML = "";
+            window.iznaAPI?.showSystemMessage("2001年封存记录已解锁。");
+        } else {
+            document.getElementById("archive4-error").innerHTML = "❌ 密码错误。提示：学生证末四位。";
+        }
+    });
+    
+    // 初始化：所有archive-body默认关闭
+    for (let i = 1; i <= 7; i++) {
+        const el = document.getElementById(`archive${i}`);
+        if (el) el.style.display = "none";
+    }
+</script>
+</body>
+</html>

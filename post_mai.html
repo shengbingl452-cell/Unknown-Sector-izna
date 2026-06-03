@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知领域：izna - 帖子：关于1号楼红砖墙倒影的档案记录</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- 论坛头部 -->
+    <div class="header">
+        <div class="logo">
+            <span class="logo-cn">⌇ 未知领域：izna ⌇</span>
+            <span class="logo-en">The Unknown Zone: izna</span>
+        </div>
+        <div class="banner">
+            <span class="banner-text">灵异档案馆 · 1号楼专版</span>
+            <span class="banner-date">since 2004</span>
+        </div>
+        <div class="warning">
+            ⚠️ 系统警告：检测到时间污染源 | B2档案异常 | 访问记录异常 ⚠️
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="forum-1.html" class="active">怪谈档案馆</a>
+        <a href="forum-2.html">失踪人口档案库</a>
+        <a href="forum-3.html">时空观测记录</a>
+        <a href="forum-4.html">直播/仪式执行区</a>
+        <a href="#">站务管理</a>
+    </div>
+
+    <!-- 帖子主体 -->
+    <div class="post-container">
+        <div class="post-header">
+            <div class="post-title">【整理】关于1号楼红砖墙倒影的档案记录</div>
+            <div class="post-meta">
+                <span>作者：MAI（富冈茉衣）</span>
+                <span>发表于：2026-09-02 14:22:00</span>
+                <span>阅读：317 | 回复：12</span>
+            </div>
+            <div class="post-author-info">
+                <div class="post-avatar">
+                    <div class="avatar">👤</div>
+                </div>
+                <div>
+                    <div>MAI（富冈茉衣）</div>
+                    <div style="font-size:10px; color:#84cc16;">UID: mai_2204 | 注册: 2022-09-01</div>
+                    <div style="font-size:10px; color:#64748b;">签名: 档案不会说谎，但写档案的人会。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <p>我在整理旧档案时发现了这组照片。中庭榕树下的红砖墙，倒影里似乎藏着某种坐标信息。</p>
+            
+            <div class="photo-placeholder">
+                📷 [图1] 红砖墙倒影 - 拍摄于2022-10-15 14:23<br>
+                <span style="font-size:10px; color:#64748b;">（注意倒影中隐约可见的数字轮廓）</span>
+            </div>
+            
+            <p>放大图片后，我在倒影中看到了几个数字。它们不是正常的反射，而是被“刻”在墙壁上的。</p>
+            
+            <div class="photo-placeholder">
+                📷 [图2] 倒影局部放大<br>
+                <span style="font-size:10px; color:#64748b;">可见数字：3、7、17、3717</span>
+            </div>
+            
+            <p>另外，我对比了1999年的旧档案索引卡。有一张编号被涂黑了，但透过光线还能看到痕迹。</p>
+            
+            <div class="photo-placeholder">
+                📇 [附件] 档案索引卡 编号：████<br>
+                <span style="font-size:10px; color:#64748b;">透光可见末四位：3717</span>
+            </div>
+            
+            <p>我怀疑这些数字指向某个具体的位置或时间。有人有更多线索吗？</p>
+            
+            <p style="margin-top:15px; padding:8px; background:#1a1f2a; border-left:3px solid #fbbf24;">
+                <strong>📌 补充信息：</strong><br>
+                我查到的资料显示，1号楼建于1960年代，地下有两层。B1是普通地下室，B2在1980年代末被封闭。<br>
+                封闭原因不明。档案中没有记录。
+            </p>
+        </div>
+
+        <div class="post-footer">
+            <span>👍 点赞 23</span>
+            <span>💬 回复 12</span>
+            <span>🔖 收藏</span>
+        </div>
+    </div>
+
+    <!-- 谜题交互区 -->
+    <div class="puzzle-box">
+        <h4>🔐 记忆碎片解锁 · 照片叠影谜题</h4>
+        <p>将六位角色的中庭榕树照片按发帖顺序叠加，可以揭示隐藏坐标。</p>
+        <p style="font-size:11px; color:#94a3b8;">发帖顺序：MAI → 方智玟 → KOKO → Jungeun → 柳莎朗 → 郑世菲</p>
+        
+        <div id="photo-stack-area" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;"></div>
+        
+        <button class="puzzle-btn" id="check-stack-btn">验证叠影顺序</button>
+        <div id="stack-result" class="puzzle-result" style="display:none;"></div>
+        
+        <hr style="margin:15px 0; border-color:#2a2f3c;">
+        
+        <h4>📝 学生证残影</h4>
+        <button class="puzzle-btn" id="show-student-id">查看学生证残影</button>
+        <div id="student-id-result" class="puzzle-result" style="display:none;"></div>
+    </div>
+
+    <!-- 回复区 -->
+    <div class="reply-box reply-area">
+        <h4>发表回复</h4>
+        <textarea class="reply-textarea" placeholder="输入回复内容...（谜题答案请直接输入）"></textarea>
+        <button class="reply-btn" id="submit-reply">提交回复</button>
+        <div id="reply-result"></div>
+    </div>
+
+    <!-- 返回链接 -->
+    <div style="margin: 15px; text-align: center;">
+        <a href="forum-1.html" style="color:#38bdf8;">← 返回怪谈档案馆</a>
+    </div>
+
+    <div class="footer">
+        <p>未知领域：izna — 重叠的1号楼 · 失落年华的匿名回音</p>
+        <p>Powered by izna BBS © 2004-2026</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // 照片数据
+    const photos = [
+        { name: "MAI（富冈茉衣）", emoji: "📚", order: 0 },
+        { name: "方智玟", emoji: "🌙", order: 1 },
+        { name: "KOKO（楢井瑚瑚）", emoji: "🏗️", order: 2 },
+        { name: "Jungeun", emoji: "🌑", order: 3 },
+        { name: "柳莎朗", emoji: "📷", order: 4 },
+        { name: "郑世菲", emoji: "🔮", order: 5 }
+    ];
+    
+    let selectedOrder = [0, 1, 2, 3, 4, 5];
+    const container = document.getElementById("photo-stack-area");
+    
+    function renderPhotos() {
+        if (!container) return;
+        container.innerHTML = '';
+        selectedOrder.forEach((idx, pos) => {
+            const p = photos[idx];
+            const div = document.createElement('div');
+            div.style.cssText = "background:#1c1f26; border:1px solid #475569; border-radius:4px; padding:8px; width:90px; text-align:center; cursor:pointer;";
+            div.innerHTML = `<div style="font-size:24px;">${p.emoji}</div>
+                             <div style="font-size:10px; font-weight:bold;">${p.name.substring(0,8)}</div>
+                             <div style="font-size:9px; margin-top:4px;">顺序 #${pos+1}</div>`;
+            div.addEventListener('click', () => {
+                if (pos > 0) {
+                    [selectedOrder[pos], selectedOrder[pos-1]] = [selectedOrder[pos-1], selectedOrder[pos]];
+                    renderPhotos();
+                }
+            });
+            container.appendChild(div);
+        });
+    }
+    
+    if (container) renderPhotos();
+    
+    document.getElementById("check-stack-btn")?.addEventListener("click", () => {
+        const isCorrect = selectedOrder.join(',') === '0,1,2,3,4,5';
+        const resultDiv = document.getElementById("stack-result");
+        if (isCorrect) {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "✨ 叠影中央浮现文字：【 B2 在榕树正下方，向下 12 步 】 ✨<br>✅ 学生证残影已解锁！";
+            document.getElementById("student-id-result").style.display = "block";
+            document.getElementById("student-id-result").innerHTML = "📇 学生证信息：<br>姓名：乔□<br>入学：1999<br>编号末四位：3717<br><span style='font-size:10px; color:#64748b;'>边缘灰度条隐藏日期：1999-03-17 / 1999-10-22</span>";
+            window.iznaAPI?.unlockMemory('mai', 30);
+        } else {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "❌ 照片顺序错误。请按发帖顺序排列：MAI → 方智玟 → KOKO → Jungeun → 柳莎朗 → 郑世菲（点击图片调整顺序）";
+        }
+    });
+    
+    document.getElementById("show-student-id")?.addEventListener("click", () => {
+        document.getElementById("student-id-result").style.display = "block";
+        document.getElementById("student-id-result").innerHTML = "📇 学生证信息：<br>姓名：乔□<br>入学：1999<br>编号末四位：3717<br><span style='font-size:10px; color:#64748b;'>边缘灰度条隐藏日期：1999-03-17 / 1999-10-22</span>";
+    });
+    
+    document.getElementById("submit-reply")?.addEventListener("click", () => {
+        const replyText = document.querySelector(".reply-textarea")?.value;
+        if (replyText && replyText.toLowerCase().includes("b2")) {
+            window.iznaAPI?.showSystemMessage("权限不足，需要学生证末四位。");
+        } else if (replyText && replyText.includes("3717")) {
+            window.iznaAPI?.showSystemMessage("验证通过。你正在接近真相。");
+            window.iznaAPI?.unlockMemory('mai', 30);
+        } else if (replyText) {
+            window.iznaAPI?.showSystemMessage("回复已提交。等待审核。");
+        }
+    });
+</script>
+</body>
+</html>

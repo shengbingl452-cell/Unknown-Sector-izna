@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知领域：izna - 帖子：我梦游时拍到了东侧铁门的门缝光</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <span class="logo-cn">⌇ 未知领域：izna ⌇</span>
+            <span class="logo-en">The Unknown Zone: izna</span>
+        </div>
+        <div class="banner">
+            <span class="banner-text">灵异档案馆 · 1号楼专版</span>
+            <span class="banner-date">since 2004</span>
+        </div>
+        <div class="warning">
+            ⚠️ 系统警告：检测到时间污染源 | B2档案异常 | 访问记录异常 ⚠️
+        </div>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="forum-1.html" class="active">怪谈档案馆</a>
+        <a href="forum-2.html">失踪人口档案库</a>
+        <a href="forum-3.html">时空观测记录</a>
+        <a href="forum-4.html">直播/仪式执行区</a>
+        <a href="#">站务管理</a>
+    </div>
+
+    <div class="post-container">
+        <div class="post-header">
+            <div class="post-title">【惊】我梦游时拍到了东侧铁门的门缝光（多图）</div>
+            <div class="post-meta">
+                <span>作者：方智玟</span>
+                <span>发表于：2026-09-14 23:17:00</span>
+                <span>阅读：521 | 回复：28</span>
+            </div>
+            <div class="post-author-info">
+                <div class="post-avatar">
+                    <div class="avatar">🌙</div>
+                </div>
+                <div>
+                    <div>方智玟</div>
+                    <div style="font-size:10px; color:#84cc16;">UID: jmj_2305 | 注册: 2023-09-01</div>
+                    <div style="font-size:10px; color:#64748b;">签名: 我梦见别人的梦。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <p>这已经不是我第一次梦游了。但这次不一样——我醒来的时候，手机相册里多了这张照片。</p>
+            
+            <div class="photo-placeholder">
+                📷 [照片] 东侧铁门 · 拍摄于2026-09-14 03:17<br>
+                <span style="font-size:10px; color:#64748b;">（门缝里透出的光线，形状很奇怪）</span>
+            </div>
+            
+            <p>我查了照片的Exif信息。拍摄时间显示03:17，但我明明应该在睡觉。</p>
+            
+            <p>更诡异的是，门缝光的形状——它不是自然光。它像是……被刻意塑造成某种图案。</p>
+            
+            <div class="photo-placeholder">
+                📷 [照片] 门缝光局部放大<br>
+                <span style="font-size:10px; color:#64748b;">（光斑形状：一个圆形，中间有一条竖线）</span>
+            </div>
+            
+            <p>我的室友说，那天晚上我在说梦话。她用手机录了一段。</p>
+            
+            <div class="photo-placeholder">
+                🎵 [音频] 梦话录音_20260914_0317.wav<br>
+                <span style="font-size:10px; color:#64748b;">（录音中有不属于我的声音）</span>
+            </div>
+            
+            <p>我听了录音。那不是我。是一个我从来没听过的声音，说着什么“03:17”。</p>
+            
+            <p style="margin-top:15px; padding:8px; background:#1a1f2a; border-left:3px solid #fbbf24;">
+                <strong>📌 补充信息：</strong><br>
+                我后来发现，门缝光的形状和B2的平面图入口标识完全一致。有人知道B2是什么吗？
+            </p>
+        </div>
+
+        <div class="post-footer">
+            <span>👍 点赞 45</span>
+            <span>💬 回复 28</span>
+            <span>🔖 收藏</span>
+        </div>
+    </div>
+
+    <!-- 谜题交互区 -->
+    <div class="puzzle-box">
+        <h4>🔐 记忆碎片解锁 · 时间签名谜题</h4>
+        <p>收集以下时间坐标，解码隐藏信息：</p>
+        <p style="font-family:monospace; background:#1a1f2a; padding:8px;">09-01 / 09-14 / 03-17 / 10-22 + 3717</p>
+        <p style="font-size:11px; color:#94a3b8;">提示：坐标表对应字符，末四位补最后一位</p>
+        
+        <input type="text" id="decode-input" class="puzzle-input" placeholder="输入解码结果...">
+        <button class="puzzle-btn" id="decode-btn">验证解码</button>
+        <div id="decode-result" class="puzzle-result" style="display:none;"></div>
+        
+        <hr style="margin:15px 0; border-color:#2a2f3c;">
+        
+        <h4>🎵 音频分析</h4>
+        <button class="puzzle-btn" id="analyze-audio">分析梦话录音频谱</button>
+        <div id="audio-result" class="puzzle-result" style="display:none;"></div>
+    </div>
+
+    <div class="reply-box reply-area">
+        <h4>发表回复</h4>
+        <textarea class="reply-textarea" placeholder="输入回复内容...（谜题答案请直接输入）"></textarea>
+        <button class="reply-btn" id="submit-reply">提交回复</button>
+        <div id="reply-result"></div>
+    </div>
+
+    <div style="margin: 15px; text-align: center;">
+        <a href="forum-1.html" style="color:#38bdf8;">← 返回怪谈档案馆</a>
+    </div>
+
+    <div class="footer">
+        <p>未知领域：izna — 重叠的1号楼 · 失落年华的匿名回音</p>
+        <p>Powered by izna BBS © 2004-2026</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    document.getElementById("decode-btn")?.addEventListener("click", () => {
+        const input = document.getElementById("decode-input")?.value.trim().toUpperCase();
+        const resultDiv = document.getElementById("decode-result");
+        if (input === "QISHI") {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "✅ 解码成功：Q I S H I → QISHI（乔时）<br>📜 隐藏帖 2-005 已解锁：「让她毕业」";
+            window.iznaAPI?.unlockMemory('jungmin', 25);
+        } else if (input === "QISHI" || input.includes("乔时")) {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "✅ 解码成功。隐藏信息指向「乔时」。";
+            window.iznaAPI?.unlockMemory('jungmin', 25);
+        } else {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = "❌ 解码错误。提示：坐标表对应字符，末四位补最后一位。";
+        }
+    });
+    
+    document.getElementById("analyze-audio")?.addEventListener("click", () => {
+        const resultDiv = document.getElementById("audio-result");
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = "📊 频谱分析结果：<br>2000Hz附近竖线高度序列：3 | 17 | 1999<br>🎧 倒放提取人声：「她在B2」<br>⏰ 时间坐标：1999-03-17 03:17";
+    });
+    
+    document.getElementById("submit-reply")?.addEventListener("click", () => {
+        const replyText = document.querySelector(".reply-textarea")?.value;
+        if (replyText && replyText.includes("03:17")) {
+            window.iznaAPI?.showSystemMessage("03:17是锚点。你正在接近污染源。");
+        } else if (replyText && replyText.toLowerCase().includes("b2")) {
+            window.iznaAPI?.showSystemMessage("B2在榕树正下方。向下12步。");
+        } else if (replyText) {
+            window.iznaAPI?.showSystemMessage("回复已提交。正在等待系统审核。");
+        }
+    });
+</script>
+</body>
+</html>
