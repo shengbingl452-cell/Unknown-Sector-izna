@@ -145,7 +145,8 @@
         { name: "郑世菲", emoji: "🔮", order: 5 }
     ];
     
-    let selectedOrder = [0, 1, 2, 3, 4, 5];
+    // 初始打乱顺序，需要玩家手动排列回正确顺序 [0,1,2,3,4,5]
+    let selectedOrder = [2, 5, 0, 3, 1, 4];
     const container = document.getElementById("photo-stack-area");
     
     function renderPhotos() {
