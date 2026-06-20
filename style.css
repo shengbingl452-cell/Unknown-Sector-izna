@@ -455,3 +455,12 @@ body {
     font-size: 11px;
     color: #94a3b8;
 }
+
+/* 图片显示 */
+.photo-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 8px;
+    display: block;
+}

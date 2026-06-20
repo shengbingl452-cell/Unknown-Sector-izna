@@ -75,6 +75,7 @@
             <div class="photo-placeholder">
                 📇 [附件] 档案索引卡 编号：████<br>
                 <span style="font-size:10px; color:#64748b;">透光可见末四位：3717</span>
+                <img src="b2_archive.jpg" alt="档案索引卡">
             </div>
             
             <p>我怀疑这些数字指向某个具体的位置或时间。有人有更多线索吗？</p>
@@ -108,7 +109,9 @@
         
         <h4>📝 学生证残影</h4>
         <button class="puzzle-btn" id="show-student-id">查看学生证残影</button>
-        <div id="student-id-result" class="puzzle-result" style="display:none;"></div>
+        <div id="student-id-result" class="puzzle-result" style="display:none;">
+            <img src="student_card.jpg" alt="学生证残影" style="max-width:80%; margin:10px auto;">
+        </div>
     </div>
 
     <!-- 回复区 -->
@@ -174,7 +177,7 @@
             resultDiv.style.display = "block";
             resultDiv.innerHTML = "✨ 叠影中央浮现文字：【 B2 在榕树正下方，向下 12 步 】 ✨<br>✅ 学生证残影已解锁！";
             document.getElementById("student-id-result").style.display = "block";
-            document.getElementById("student-id-result").innerHTML = "📇 学生证信息：<br>姓名：乔□<br>入学：1999<br>编号末四位：3717<br><span style='font-size:10px; color:#64748b;'>边缘灰度条隐藏日期：1999-03-17 / 1999-10-22</span>";
+            document.getElementById("student-id-result").innerHTML = '<img src="student_card.jpg" alt="学生证残影" style="max-width:80%; margin:10px auto; display:block;">📇 学生证信息：<br>姓名：乔□<br>入学：1999<br>编号末四位：3717<br><span style="font-size:10px; color:#64748b;">边缘灰度条隐藏日期：1999-03-17 / 1999-10-22</span>';
             window.iznaAPI?.unlockMemory('mai', 30);
         } else {
             resultDiv.style.display = "block";
@@ -183,8 +186,9 @@
     });
     
     document.getElementById("show-student-id")?.addEventListener("click", () => {
-        document.getElementById("student-id-result").style.display = "block";
-        document.getElementById("student-id-result").innerHTML = "📇 学生证信息：<br>姓名：乔□<br>入学：1999<br>编号末四位：3717<br><span style='font-size:10px; color:#64748b;'>边缘灰度条隐藏日期：1999-03-17 / 1999-10-22</span>";
+        const el = document.getElementById("student-id-result");
+        el.style.display = "block";
+        el.innerHTML = '<img src="student_card.jpg" alt="学生证残影" style="max-width:80%; margin:10px auto; display:block;">📇 学生证信息：<br>姓名：乔□<br>入学：1999<br>编号末四位：3717<br><span style="font-size:10px; color:#64748b;">边缘灰度条隐藏日期：1999-03-17 / 1999-10-22</span>';
     });
     
     document.getElementById("submit-reply")?.addEventListener("click", () => {
